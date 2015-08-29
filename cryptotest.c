@@ -5,7 +5,7 @@
 #include <linux/init.h>
 #include <linux/err.h>
 
-#include "cryptotest.h"
+#include <cryptotest.h>
 
 static int alg;
 

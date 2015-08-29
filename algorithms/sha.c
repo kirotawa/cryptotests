@@ -1,7 +1,7 @@
 #include <crypto/sha.h>
 #include <crypto/hash.h>
 
-#include "../cryptotest.h"
+#include <cryptotest.h>
 
 #define HUNK(type) (0x80 >> (1 - type)) 
 #define DIGEST(type) (0x20 << type)
