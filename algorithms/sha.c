@@ -36,7 +36,6 @@ int sha_test(int type, char *alg)
 		crypto_shash_init(&desc.desc);
 		crypto_shash_update(&desc.desc, msg, HUNK(type) + 1);
 		crypto_shash_final(&desc.desc, hash);
-		
 	}	 
 	
 	printk("%s: ", alg);
@@ -46,5 +45,5 @@ int sha_test(int type, char *alg)
 	printk("\n");
 	
 	crypto_free_shash(tfm);
-	return 0;
+	return rc;
 }
