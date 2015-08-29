@@ -58,3 +58,4 @@ module_exit(cryptotest_exit);
 
 module_param(alg, int, 0);
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Leonidas S. Barbosa");
