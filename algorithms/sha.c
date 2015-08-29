@@ -13,7 +13,6 @@ int sha_test(int type, char *alg)
 	u8 msg[HUNK(type) + 1];
 	u8 hash[DIGEST(type)];
 	int rc = 0;
-	int i;
 
 	memset(msg, 0xab, HUNK(type) + 1);
 	memset(hash, 0x00, DIGEST(type));
@@ -38,11 +37,8 @@ int sha_test(int type, char *alg)
 		crypto_shash_final(&desc.desc, hash);
 	}	 
 	
-	printk("%s: ", alg);
-	for (i = 0; i < sizeof(hash); i++)
-		printk(" %02x", (u8) hash[i]);
-
-	printk("\n");
+	printk("%s:\n", alg);
+	hexdump(hash);
 	
 	crypto_free_shash(tfm);
 	return rc;

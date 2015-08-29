@@ -10,6 +10,12 @@
 #define SHA256  0x6
 #define SHA512	0x7
 
+#define hexdump(value) { \
+	print_hex_dump(KERN_CONT, "", DUMP_PREFIX_OFFSET, \
+			16, 1,\
+			value, sizeof(value), false); \
+	}
+
 int sha_test(int, char*);
 
 #endif //__CRYPTOTEST
