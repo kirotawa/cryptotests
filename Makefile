@@ -1,7 +1,9 @@
 EXTRA_CFLAGS := -I$(src)/include
 obj-m += test.o 
-
-test-objs := cryptotest.o algorithms/sha.o
+ALGOBJS := algorithms
+test-objs := cryptotest.o \
+	     $(ALGOBJS)/sha.o \
+	     $(ALGOBJS)/ghash.o
 
 DIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)

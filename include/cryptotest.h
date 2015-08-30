@@ -17,5 +17,6 @@
 	}
 
 int sha_test(int, char*);
+int ghash_test(char*, int, char*);
 
 #endif //__CRYPTOTEST

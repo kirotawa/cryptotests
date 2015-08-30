@@ -29,6 +29,12 @@ static int __init cryptotest_init(void)
 			break;
 		case GHASH:
 			printk(KERN_INFO "Running test for ghash\n");
+			{
+				u8 key[16] = "\x95\x2b\x2a\x56\xa5\x60\x04a\xc0"
+					     "\xb3\x2b\x66\x56\xa0\x5b\x40\xb6";
+				/* msg, msg_size, key */
+				ghash_test("aeiou", 5, key);
+			}
 			break;
 		case SHA256:
 			printk(KERN_INFO "Running test for sha256\n");
